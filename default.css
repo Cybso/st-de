@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+body {
+	background-image: url('img/background.jpg');
+	background-position: 50% 50%;
+	background-size: contain;
+	background-attachment: fixed;
+	color: #ffffff;
+}
+
+a.liame {
+	white-space: nowrap;
+}
+
+a.liame:before {
+	content: attr(data-website) "\0040" attr(data-user);
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
+
+a {
+	color: #ffff7f;
+}
+
+a:hover {
+	color: #ffaa7f;
+}
+
+header {
+	display: block;
+	padding: 1ex;
+	margin: 1em;
+	background-color: #000;
+	border: 4px outset white;
+	text-align: center;
+}
+
+header h1 {
+	margin: 0;
+	text-shadow: 2px 2px blue;
+}
+
+header h1:before {
+	content: ' ';
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+	background-image: url('img/starfleet.gif');
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	background-size: contain;
+	margin-right: 1ex;
+}
+
+header h1:after {
+	content: ' ';
+	display: inline-block;
+	height: 1em;
+	width: 1em;
+	background-image: url('img/starfleet.gif');
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	background-size: contain;
+	margin-left: 1ex;
+}
+
+#page {
+	display: flex;
+	align-items: flex-start;
+}
+
+nav {
+	display: block;
+	margin: 0 1em;
+	background-color: #000;
+	border: 4px outset white;
+}
+
+nav > ul {
+	list-style: none;
+	padding: 0;
+	margin: 1ex;
+}
+
+nav > ul > li {
+	padding-left: 40px;
+	margin: 0;
+	margin-bottom: 1ex;
+	background-image: url('img/vulkan.png');
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	font-size: 1.5em;
+}
+
+#content {
+	margin: 0 1em;
+	width: 100%;
+	border: 4px ridge #d1d1d1;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#content > section {
+	display: none;
+	padding: 0.5em;
+}
+
+#content > section.active {
+	display: block;
+}
+
+#content > section > h2 {
+	margin: 0;
+}
+
+footer {
+	display: block;
+	font-size: 0.8em;
+	margin: 1em;
+	text-align: center;
+}
+
+dl > dt {
+	font-weight: bold;
+	margin-top: 1em;
+}
+
+dl > dt:first-child {
+	margin-top: 0;
+}
+
+blockquote {
+	font-style: italic;
+}
+
+blockquote:before {
+	content: '"';
+}
+
+blockquote:after {
+	content: '"';
+}
+
+@media (max-width: 1024px) {
+	.no-mobile {
+		display: none;
+	}
+
+	#page {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	#content {
+		width: auto;
+		margin-top: 1em;
+	}
+	
+}
